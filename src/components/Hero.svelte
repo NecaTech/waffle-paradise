@@ -1,15 +1,36 @@
 <script>
   import { onMount } from 'svelte';
-  import { gsap } from 'gsap';
-  
-  onMount(() => {
-    gsap.from('.hero-text', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      stagger: 0.3,
-      ease: 'power3.out'
-    });
+  let gsap;
+
+  onMount(async () => {
+    try {
+      if (typeof window !== 'undefined') {
+        const gsapModule = await import('gsap');
+        gsap = gsapModule.default;
+        
+        const tl = gsap.timeline();
+        tl.from('.hero-text', {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          ease: 'power4.out'
+        })
+        .from('.hero-description', {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power4.out'
+        }, '-=0.5')
+        .from('.cta-button', {
+          scale: 0.8,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'back.out(1.7)'
+        }, '-=0.5');
+      }
+    } catch (error) {
+      console.error('Error loading GSAP:', error);
+    }
   });
 </script>
 
@@ -23,11 +44,11 @@
     <h1 class="hero-text font-playfair text-5xl md:text-7xl mb-6">
       L'art de la gaufre gourmande
     </h1>
-    <p class="hero-text text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+    <p class="hero-description text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
       Découvrez nos gaufres artisanales, un délicieux mélange de tradition et d'innovation
     </p>
     <a href="#menu" 
-       class="hero-text inline-block bg-raspberry hover:bg-brown text-vanilla px-8 py-3 rounded-full transition-colors duration-300 transform hover:scale-105">
+       class="cta-button inline-block bg-raspberry hover:bg-brown text-vanilla px-8 py-3 rounded-full transition-colors duration-300 transform hover:scale-105">
       Découvrir nos gaufres
     </a>
   </div>

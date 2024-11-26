@@ -1,25 +1,38 @@
 <script>
   import { onMount } from 'svelte';
-  import gsap from 'gsap/dist/gsap.js';
-  import ScrollTrigger from 'gsap/dist/ScrollTrigger.js';
   
-  gsap.registerPlugin(ScrollTrigger);
-  
-  onMount(() => {
-    const numbers = document.querySelectorAll('.number');
-    
-    numbers.forEach(number => {
-      const target = parseInt(number.getAttribute('data-target'));
-      gsap.to(number, {
-        innerHTML: target,
-        duration: 2,
-        snap: { innerHTML: 1 },
-        scrollTrigger: {
-          trigger: number,
-          start: 'top 80%'
-        }
-      });
-    });
+  let gsap;
+  let ScrollTrigger;
+
+  onMount(async () => {
+    try {
+      if (typeof window !== 'undefined') {
+        const gsapModule = await import('gsap');
+        const scrollTriggerModule = await import('gsap/ScrollTrigger');
+        
+        gsap = gsapModule.default;
+        ScrollTrigger = scrollTriggerModule.default;
+        
+        gsap.registerPlugin(ScrollTrigger);
+        
+        const numbers = document.querySelectorAll('.number');
+        
+        numbers.forEach(number => {
+          const target = parseInt(number.getAttribute('data-target'));
+          gsap.to(number, {
+            innerHTML: target,
+            duration: 2,
+            snap: { innerHTML: 1 },
+            scrollTrigger: {
+              trigger: number,
+              start: 'top 80%'
+            }
+          });
+        });
+      }
+    } catch (error) {
+      console.error('Error loading GSAP:', error);
+    }
   });
 </script>
 

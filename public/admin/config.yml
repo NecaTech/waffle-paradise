@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: NecaTech/waffle-paradise
+  branch: main
+  base_url: https://api.netlify.com
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    format: "frontmatter"
+    extension: "mdx"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "menu"
+    label: "Menu"
+    folder: "content/menu"
+    create: true
+    format: "json"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - label: "Items"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Nom", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Prix", name: "price", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }

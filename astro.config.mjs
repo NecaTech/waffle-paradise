@@ -3,7 +3,6 @@ import tailwind from '@astrojs/tailwind';
 import svelte from '@astrojs/svelte';
 
 export default defineConfig({
-  base: '/beta_02',
   trailingSlash: 'always',
   output: 'static',
   build: {
