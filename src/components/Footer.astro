@@ -1,0 +1,35 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-chocolate text-vanilla py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-playfair text-2xl mb-4">Waffle Paradise</h3>
+        <p class="mb-4">L'art de la gaufre gourmande</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-raspberry transition-colors">Instagram</a>
+          <a href="#" class="hover:text-raspberry transition-colors">Facebook</a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-playfair text-xl mb-4">Horaires</h4>
+        <p>Lundi - Vendredi : 10h - 19h</p>
+        <p>Samedi - Dimanche : 9h - 20h</p>
+      </div>
+      
+      <div>
+        <h4 class="font-playfair text-xl mb-4">Contact</h4>
+        <p>123 Rue des Gaufres</p>
+        <p>75001 Paris</p>
+        <p>Tél : 01 23 45 67 89</p>
+      </div>
+    </div>
+    
+    <div class="border-t border-vanilla/20 mt-8 pt-8 text-center">
+      <p>&copy; {currentYear} Waffle Paradise. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>

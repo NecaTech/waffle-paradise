@@ -1,0 +1,63 @@
+{
+  "story": {
+    "name": "Home",
+    "content": {
+      "component": "page",
+      "body": [
+        {
+          "component": "hero",
+          "title": "Waffle Paradise",
+          "subtitle": "L'art de la gaufre gourmande",
+          "background": {
+            "filename": "/images/hero-background.jpg"
+          },
+          "cta_text": "Découvrir nos gaufres",
+          "cta_link": "#menu"
+        },
+        {
+          "component": "menu",
+          "title": "Nos Gaufres",
+          "items": [
+            {
+              "title": "Gaufre Classique",
+              "description": "Notre gaufre traditionnelle, croustillante à l'extérieur, moelleuse à l'intérieur",
+              "price": "5.50",
+              "image": {
+                "filename": "/images/gaufre-classique.jpg"
+              }
+            },
+            {
+              "title": "Gaufre Chocolat",
+              "description": "Gaufre nappée de chocolat belge fondu",
+              "price": "6.50",
+              "image": {
+                "filename": "/images/gaufre-chocolat.jpg"
+              }
+            }
+          ]
+        },
+        {
+          "component": "about",
+          "title": "Notre Histoire",
+          "content": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "text": "Depuis 2023, Waffle Paradise vous propose les meilleures gaufres artisanales.",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          "image": {
+            "filename": "/images/about.jpg"
+          }
+        }
+      ]
+    }
+  }
+}

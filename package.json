@@ -1,0 +1,31 @@
+{
+  "name": "waffle-paradise",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "tinacms dev -c \"astro dev\"",
+    "start": "astro dev",
+    "build": "tinacms build && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "import-content": "node scripts/import-to-storyblok.js",
+    "export-content": "node scripts/export-content.js"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^5.0.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/inter": "^5.0.17",
+    "@fontsource/playfair-display": "^5.0.19",
+    "aos": "^2.3.4",
+    "astro": "^4.15.11",
+    "dotenv": "^16.3.1",
+    "gsap": "^3.12.5",
+    "svelte": "^4.2.12",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.6.12",
+    "tinacms": "^2.5.0"
+  }
+}

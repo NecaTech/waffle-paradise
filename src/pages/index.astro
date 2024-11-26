@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.svelte';
+import Menu from '../components/Menu.svelte';
+import About from '../components/About.svelte';
+import Contact from '../components/Contact.svelte';
+---
+
+<Layout title="Waffle Paradise - L'art de la gaufre gourmande">
+  <main>
+    <Hero client:load />
+    <Menu client:load />
+    <About client:load />
+    <Contact client:load />
+  </main>
+</Layout>

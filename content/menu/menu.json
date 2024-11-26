@@ -1,0 +1,17 @@
+{
+  "title": "Nos Gaufres",
+  "items": [
+    {
+      "title": "Gaufre Classique",
+      "description": "Notre gaufre traditionnelle, croustillante à l'extérieur, moelleuse à l'intérieur",
+      "price": "5.50",
+      "image": "/images/gaufre-classique.jpg"
+    },
+    {
+      "title": "Gaufre Chocolat",
+      "description": "Gaufre nappée de chocolat belge fondu",
+      "price": "6.50",
+      "image": "/images/gaufre-chocolat.jpg"
+    }
+  ]
+}
